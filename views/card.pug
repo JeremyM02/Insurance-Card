@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    div(class=`card ${cardClass}`)
+        h3.title ACME Insurance Co
+        div.info-row.name-row
+            p.label Name:
+            p #{firstName} #{lastName}
+        div.info-container
+            div.info-row
+                p.label Insurance Type:
+                p #{type}
+            div.info-row
+                //
+                //
+                //
+                //
+                p.label DOB:
+                p #{dateOfBirth.getMonth()+1}/#{dateOfBirth.getDate()}/#{dateOfBirth.getFullYear()}
+        div.info-row
+            div
+                p.label Address:
+
+            div.address-text
+                p #{addressLine1}
+                p #{addressLine2}
+                p #{city}, #{state}, #{zip}
+        div.info-container
+            div.info-row
+                p.label Acct #:
+                p #{accountNumber}
+            div.info-row
+                p.label Exp.:
+                //
+                p #{currentDate.getMonth()+1}/#{currentDate.getDate()}/#{currentDate.getFullYear()+4}
+        div.info-row
+            p.label Insurance Policy Start:
+            p #{policyStartDate.getMonth()+1}/#{policyStartDate.getDate()}/#{policyStartDate.getFullYear()}
+            //p #{policyStartDate.getMonth()+1}/#{policyStartDate.getDate()}/#{policyStartDate.getFullYear()}
+    br
+    a(href = '/') Return to Form
